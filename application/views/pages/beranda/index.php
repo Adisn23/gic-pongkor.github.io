@@ -1,47 +1,22 @@
-  <!-- ======= Hero Section ======= -->
+<!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
+      <?php foreach($data_banner as $b) : ?>
       <div class="carousel-inner" role="listbox">
-
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/gic_image/gic_2.jpg)">
+        <div class="carousel-item active" style="background-image: url(uploads/image/<?= $b['image']; ?>">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Geopark Pongkor
-              <span class="d-block">Information Center</span></h2>
-              <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Pongkor. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Pongkor</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2 class="animate__animated animate__fadeInDown"><?= $b['judul'] ?></h2>
+              <p class="animate__animated animate__fadeInUp"><?= $b['deskripsi'] ?></p>
+              <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> -->
             </div>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div>
-
       </div>
-
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
       </a>
@@ -49,14 +24,15 @@
       <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
       </a>
-
+      <?php endforeach; ?>
     </div>
+
   </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services section-bg">
+    <!-- <section id="featured-services" class="featured-services section-bg">
       <div class="container">
 
         <div class="row no-gutters">
@@ -84,7 +60,8 @@
         </div>
 
       </div>
-    </section><!-- End Featured Services Section -->
+    </section> -->
+    <!-- End Featured Services Section -->
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
@@ -95,76 +72,62 @@
           <p>Geopark Pongkor adalah sebuah geopark yang terletak di Kabupaten Bogor, Jawa Barat, Indonesia. Geopark ini memiliki keunikan geologi, keanekaragaman hayati, serta nilai budaya dan sejarah yang signifikan. Geopark Pongkor secara khusus menampilkan ciri khas geologi dan lanskap alam yang memukau, termasuk adanya endapan-endapan mineral, situs-situs batuan, serta keindahan alam yang menarik.</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/gic_image/gic_4.jpg" class="img-fluid img-about-gic" alt="">
+        <?php foreach($data_home as $data) : ?>
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2">
+              <img src="uploads/image/<?= $data['image']; ?>" class="img-fluid img-about-gic mb-2" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content content-about-gic mb-2">
+              <h3><?= $data['judul']?></h3>
+              <p>
+              <?= $data['deskripsi']?>
+              </p>
+            </div>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content content-about-gic">
-            <h3>Geopark Pongkor Menjadi Sebuah Tempat Bagi Pecinta Wisata Alam Sekaligus Warisan Budaya Kabupaten Bogor.</h3>
-            <p>
-            Geopark Pongkor menjadi tempat studi yang penting bagi para ilmuwan, peneliti, dan pengunjung yang tertarik dalam mempelajari fenomena geologi, kekayaan hayati, serta warisan budaya yang ada di daerah tersebut. Tujuan utamanya adalah untuk melindungi serta mengelola warisan alam dan budaya agar dapat dinikmati oleh generasi sekarang dan yang akan datang, sambil tetap memperhatikan keberlanjutan lingkungan.
-            </p>
-            <p>
-            Pengelolaan Geopark Pongkor melibatkan upaya konservasi alam, pendidikan, serta promosi pariwisata yang bertanggung jawab. Geopark ini menjadi salah satu contoh dari upaya konservasi sumber daya alam dan keanekaragaman budaya yang berharga di Indonesia.
-            </p>
-          </div>
-        </div>
+        <?php endforeach; ?>
 
       </div>
     </section>
     <!-- End About Us Section -->
 
-     <!-- ======= About Us Section ======= -->
-     <section id="berita" class="berita">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Berita dalam derita</h2>
-        </div>
-
-        <div class="card mb-3" >
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+    <!-- ======= Berita Section ======= -->
     <section id="berita" class="berita">
       <div class="container">
 
         <div class="section-title">
-          <h2>Data Statistik</h2>
+          <h2>Berita</h2>
         </div>
 
-        <div class="card mb-3" >
+        <?php foreach($data_berita as $data) : ?>
+        <a href="<?= base_url().'Informasi/detail/'.$data['id_berita']; ?>"class="shadow-sm card mb-3" >
           <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
+            <div class="col-md-4 p-2">
+              <img src="uploads/image/<?= $data['image']; ?>" class="img-fluid rounded" alt="...">
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="col-md-8 d-flex ">
+              <div class=" card-body d-flex flex-column bd-highlight align-item-start">
+                  <h5 class="card-title"><?= $data['judul'] ?></h5>
+                  <p class="card-text">
+                  <?= substr($data['deskripsi'] , 0, 300) . ' ... <span style="color: blue;">selengkapnya</span>' ?></p>
+                <div class="mt-auto bd-highlight">
+                  <div class="d-flex align-items-center">
+                    <img src="<?php echo base_url() ?>assets/img/logo/logokabbogor.png" class="rounded align-item-center" alt="..." width=22 height=22>
+                    <div class="d-flex flex-column ms-2">
+                      <span style="font-size: 14px;">GIC-Pongkor</span>
+                      <small class="text-muted" style="font-size: 12px;">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
+        <?php endforeach; ?>
 
       </div>
     </section>
-    <!-- End About Us Section -->
+    <!-- End Berita Section -->
 
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->

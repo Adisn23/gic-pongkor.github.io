@@ -3,9 +3,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Manajemen Home</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800"><?= $judul ?></h1>
                     </div>
 
 
@@ -16,50 +14,48 @@
                         <!-- Area Chart -->
                         <div class="col-xl-12 col-lg-12">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <!-- <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6> -->
+                                <div class="card-header py-3">
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Tambah Data</button>
                                 </div>
-                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <table id="myTable" class="display">
-                                        <thead>
-                                            <tr>
-                                                <th>Judul</th>
-                                                <th>Deskripsi</th>
-                                                <th>Gambar</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Row 1 Data 1</td>
-                                                <td>Row 1 Data 2</td>
-                                                <td>Row 1 Data 2</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-primary btn-sm">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalHapus">
-                                                        <i class="bi bi-trash"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Row 2 Data 1</td>
-                                                <td>Row 2 Data 2</td>
-                                                <td>Row 2 Data 2</td>
-                                                <td>Row 2 Data 2</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Judul</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Gambar</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach($data_home as $data) : ?>
+                                                <tr>
+                                                    <td><?= $data['judul']?></td>
+                                                    <td><?= $data['deskripsi']?></td>
+                                                    <td>
+                                                        <img src="<?= base_url('/uploads/image/'. $data['image']) ?>" class="img-thumbnail" alt="..." width="220px">
+                                                    </td>
+                                                    <td class="d-flex justify-content-center">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit<?= $data['id']; ?>">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                        </button>
+                                                        <!-- <a href="" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus">
+                                                            <i class="bi bi-trash"></i>
+                                                        </a> -->
+                                                        <button type="button" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus<?= $data['id'];?>">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -74,32 +70,77 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="<?= base_url(); ?>admin/beranda/Home/tambah/" method="post">
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Judul :</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="judul" class="col-form-label">Judul :</label>
+                            <input type="text" name="judul" class="form-control" id="judul" required>
+                            <small class="form-text text-danger"><?= form_error('judul'); ?></small>
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Deskripsi :</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="deskripsi" class="col-form-label">Deskripsi :</label>
+                            <textarea class="form-control" name="deskripsi" id="deskripsi" required></textarea>
+                            <small class="form-text text-danger"><?= form_error('deskripsi'); ?></small>
                         </div>
-                        <div class="input-group mb-3">
-                            <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
-                            <input type="file" class="form-control" id="inputGroupFile01">
+                        <!-- <div class="mb-3">
+                            <label for="judul">Username</label>
+                            <div class="input-group-prepend">
+                                <input type="text" class="form-control is-invalid" id="judul" aria-describedby="inputGroupPrepend3" required>
+                            </div>
+                        </div> -->
+                        <div class="mb-3">
+                            <input type="file" name="image" class="form-control" id="image" required>
+                            <span class="form-text text-danger d-block "><?= form_error('image'); ?></span>
                         </div>
-                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="submit" name="tambah"  class="btn btn-primary">Tambah</button>
+                        </form>
                     </div>
                     </div>
                 </div>
             </div>
             <!-- End of Modals -->
 
+            <!-- Modals edit data-->
+            <?php foreach($data_home as $data) : ?>
+            <div class="modal fade" id="exampleModalEdit<?= $data['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?= base_url(). 'admin/beranda/Home/ubah/'. $data['id'] ?>" method="post">
+                        <!-- <input type="hidden" name="id" value="<?= $data['id']; ?>"> -->
+                        <div class="mb-3">
+                            <label for="judul" class="col-form-label">Judul :</label>
+                            <input type="text" name="judul" class="form-control" id="judul" value="<?= $data['judul']; ?>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="col-form-label">Deskripsi :</label>
+                            <textarea class="form-control" name="deskripsi" id="deskripsi"><?= $data['deskripsi']; ?></textarea>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" name="image" class="form-control" id="image" value="<?= $data['image']; ?>">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="ubah"  class="btn btn-primary">Ubah</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+            <!-- End of Modals -->
+
+
             <!-- Modal Hapus-->
-            <div class="modal fade" id="exampleModalHapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <?php foreach($data_home as $data) : ?>
+            <div class="modal fade" id="exampleModalHapus<?= $data['id'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -111,10 +152,13 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Ya</button>
+                    <a href="<?= base_url(); ?>admin/beranda/Home/hapus/<?= $data['id'];?>" class="btn btn-danger">Ya</a> 
                 </div>
                 </div>
             </div>
             </div>
+            <?php endforeach; ?>
+
+
             <!-- End of Main Content -->
 

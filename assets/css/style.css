@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444; 
+  color: #444444;
 }
 
 a {
@@ -408,7 +408,7 @@ h6 {
 
 #hero .carousel-item::before {
   content: "";
-  background-color: rgba(30, 109, 85, 0.6);
+  background-color: rgba(45, 103, 60, 0.8);
 }
 
 #hero .carousel-container {
@@ -552,7 +552,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .section-bg {
@@ -1401,7 +1401,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #5cb874;
+  background: #090909;
   color: #fff;
   font-size: 14px;
   text-align: center;

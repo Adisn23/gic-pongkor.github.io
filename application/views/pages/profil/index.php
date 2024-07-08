@@ -1,6 +1,6 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <!-- <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel"> -->
 
       <div class="carousel-inner" role="listbox">
 
@@ -28,10 +28,10 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/gic_image/gic_4.jpg" class="img-fluid mt-3 img-about-gic" alt="">
+            <img src="uploads/image/Geologi.png" class="img-fluid mt-3 img-about-gic" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content content-about-gic">
-            <h3>PENGEMBANGAN GEOPARK</h3>
+            <h3 class="fw-bold">PENGEMBANGAN GEOPARK</h3>
             <span class="d-block mb-2">
             Kawasan Geopark Pongkor terdiri dari lembah dan pengunungan yang sangat layak menjadi objek wisata karena sudah terdapat beberapa kawasan wisata alam. Geopark Pongkor diresmikan pada tahun 2018 melalui Surat Keputusan Bupati Nomor: 556/177/Kpts/Per-UU/2018, meliputi 15 kecamatan yaitu: Nanggung, Sukajaya, Jasinga, Cigudeg, Tenjo, Tenjolaya, Tamansari, Pamijahan, Leuwiliang, Ciampea, Cibungbulang, Leuwisadeng, Parung, Rumpin dan Ciseeng, dengan 172 desa serta 33 geosite yang bisa dikembangkan.
             </span>
@@ -39,11 +39,13 @@
                 <ol>
                     <li>Geo Area 1 terdiri dari Kecamatan Nanggung, Sukajaya, Jasinga, dan Cigudeg.</li>
                     <li>Geo Area 2 terdiri dari Kecamatan Leuwiliang, Ciampea, Cibungbulang, dan Leuwisadeng</li>
-                    <li>Geo Area 3
-                    terdiri dari Kecamatan Tenjolaya, Tamansari, dan Pamijahan</li>
-                    <li>Geo Area 4 terdiri
-                    dari Kecamatan Parung, Rumpin dan Ciseeng.</li>
+                    <li>Geo Area 3 terdiri dari Kecamatan Tenjolaya, Tamansari, dan Pamijahan</li>
+                    <li>Geo Area 4 terdiri dari Kecamatan Parung, Rumpin dan Ciseeng.</li>
                 </ol>
+            </span>
+            <h3 class="fw-bold">KARAKTERISTIK GEOLOGI</h3>
+            <span class="d-block mb-2">
+            Berdasarkan proses kejadian pembentukannya, Geopark Nasional Pongkor terbentuk pada tiga lingkungan sedimentasi yang berbeda (Martodjojo, 1987).  Mandala Cekungan Bogor (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi A.  Cimapag, berumur Miosen Awal – Tengah).  Mandala Paparan Kontinen (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi Cibulakan, berumur Miosen Tengah).  Mandala Cekungan Banten/Cekungan Rangkasbitung (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi Bojongmanik, berumur Miosen Tengah).  Posisi Geopark Nasional Pongkor terhadap cekungan sedimentasi masalalu, menghasilkan hubungan sedimentasi yang cukup rumit.
             </span>
           </div>
         </div>
@@ -54,17 +56,18 @@
       <div class="container">
         <div class="section-title">
           <h2>Visi dan Misi</h2>
-          <p>Geopark Pongkor adalah sebuah geopark yang terletak di Kabupaten Bogor, Jawa Barat, Indonesia. Geopark ini memiliki keunikan geologi, keanekaragaman hayati, serta nilai budaya dan sejarah yang signifikan. Geopark Pongkor secara khusus menampilkan ciri khas geologi dan lanskap alam yang memukau, termasuk adanya endapan-endapan mineral, situs-situs batuan, serta keindahan alam yang menarik.</p>
+          <!-- <p>Geopark Pongkor adalah sebuah geopark yang terletak di Kabupaten Bogor, Jawa Barat, Indonesia. Geopark ini memiliki keunikan geologi, keanekaragaman hayati, serta nilai budaya dan sejarah yang signifikan. Geopark Pongkor secara khusus menampilkan ciri khas geologi dan lanskap alam yang memukau, termasuk adanya endapan-endapan mineral, situs-situs batuan, serta keindahan alam yang menarik.</p> -->
         </div>
 
+        <?php foreach($data_visi_misi as $value) : ?>
         <div class="card mb-4">
             <div class="card-header">
                 Visi
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                <p>Geopark Pongkor memiliki visi yaitu “Terwujudnya Geopark Nasional Pongkor sebagai destinasi pariwisata berbasis konservasi dan edukasi, berdaya saing global untuk kesejahteraan masyarakat”</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                <p><?= $value['visi'] ?></p>
+                <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
                 </blockquote>
             </div>
         </div>
@@ -75,11 +78,12 @@
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                <p>Geopark Pongkor memiliki visi yaitu “Terwujudnya Geopark Nasional Pongkor sebagai destinasi pariwisata berbasis konservasi dan edukasi, berdaya saing global untuk kesejahteraan masyarakat”</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                <p><?= $value['misi'] ?></p>
+                <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
                 </blockquote>
             </div>
         </div>
+        <?php endforeach; ?>
 
       </div>
     </section><!-- End About Us Section -->

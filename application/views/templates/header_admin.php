@@ -9,13 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title> <?= $judul ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url() ?>assets_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- datatables -->
+    <link href="<?php echo base_url() ?>assets_admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <link href="<?php echo base_url() ?>assets/img/logo/logokabbogor.png" rel="icon">
+
+
 
 
     <link
@@ -24,7 +31,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url() ?>assets_admin/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" /> -->
     
 </head>
 
