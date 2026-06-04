@@ -10,7 +10,7 @@ class Informasi extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->model('Manajemen_berita_model', 'berita');
+		$this->load->model('Manajemen_informasi_model', 'berita');
 		$this->load->helper('functional');
 		//load library
 		$this->load->library('pagination');
@@ -70,7 +70,7 @@ class Informasi extends CI_Controller {
 
 	public function detail($id){
 		$this->load->helper('functional');
-		$this->load->model('Manajemen_berita_model', 'berita');
+		$this->load->model('Manajemen_informasi_model', 'berita');
 
 		$data['detail'] =  $this->berita->getBeritaid($id);
 		$data['reviews'] = $this->Review_model->get_reviews($id);
@@ -102,7 +102,7 @@ class Informasi extends CI_Controller {
             $data['id_wisata'] = $id_wisata;
             $this->Review_model->insert_review($data);
         }
-
+		
         redirect('Informasi/detail/'.$id_wisata);
     }
 }

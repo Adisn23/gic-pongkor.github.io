@@ -10,4 +10,3 @@ navLinkEls.forEach(navLinkEl => {
     }
 
 })
-

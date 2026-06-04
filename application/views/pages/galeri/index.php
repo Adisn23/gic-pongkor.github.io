@@ -8,9 +8,9 @@
         <div class="carousel-item active" style="background-image: url(assets/img/gic_image/gic_2.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Geopark Pongkor
+              <h2 class="animate__animated animate__fadeInDown">Geopark Bogor Halimun Salak
               <span class="d-block">Galeri</span></h2>
-              <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Pongkor. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Pongkor</p>
+              <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Bogor Halimun Salak. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Bogor Halimun Salak</p>
             </div>
           </div>
         </div>

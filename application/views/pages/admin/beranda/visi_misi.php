@@ -1,16 +1,11 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?= $judul ?></h1>
                     </div>
-
-
                     <!-- Content Row -->
-
                     <div class="row">
-
                         <!-- Area Chart -->
                         <div class="col-xl-12 col-lg-12">
                             <div class="card shadow mb-4">
@@ -43,10 +38,7 @@
                                                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit<?= $value['id']; ?>">
                                                         <i class="bi bi-pencil-square"></i>
                                                         </button>
-                                                        <!-- <a href="" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus">
-                                                            <i class="bi bi-trash"></i>
-                                                        </a> -->
-                                                        <button type="button" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus<?= $value['id'];?>">
+                                                    <button type="button" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus<?= $value['id'];?>">
                                                             <i class="bi bi-trash"></i>
                                                         </button>
                                                     </td>

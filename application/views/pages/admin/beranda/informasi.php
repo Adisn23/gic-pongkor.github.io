@@ -22,33 +22,45 @@
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Judul</th>
-                                                    <th>Deskripsi</th>
-                                                    <th>Gambar</th>
-                                                    <th>Tanggal Update</th>
-                                                    <th>Action</th>
+                                                <th>ID</th>
+                                                <th>Judul</th>
+                                                <th>Deskripsi</th>
+                                                <th>Gambar</th>
+                                                <th>Harga</th>
+                                                <th>Alamat</th>
+                                                <th>Jam Buka</th>
+                                                <th>Jam Tutup</th>
+                                                <th>Latitude</th>
+                                                <th>Longitude</th>
+                                                <th>Tanggal Update</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach($data_berita as $b) : ?>
+                                                <?php foreach($data_berita as $data) : ?>
                                                 <tr>
-                                                    <td><?= $b['judul']?></td>
-                                                    <td><?= $b['deskripsi']?></td>
-                                                    <td>
-                                                        <img src="<?= base_url('/uploads/image/'. $b['image']) ?>" class="img-thumbnail" alt="..." width="220px">
-                                                    </td>
-                                                    <td><?= $b['tgl_update']?></td>
+                                                    <td><?= $data['id_berita'] ?></td>
+                                                    <td><?= $data['judul'] ?></td>
+                                                    <td><?= $data['deskripsi'] ?></td>
+                                                    <td><img  src="<?= base_url('/uploads/image/').  $data['image'] ?>" alt="Image" width="80"></td>
+                                                    <td><?= $data['harga'] ?></td>
+                                                    <td><?= $data['alamat'] ?></td>
+                                                    
+                                                    <td><?= date('H:i', strtotime($data['jam_buka'])) ?></td>
+                                                    <td><?= date('H:i', strtotime($data['jam_tutup'])) ?></td>
+                                                    <td><?= $data['latitude'] ?></td>
+                                                    <td><?= $data['longitude'] ?></td>
+                                                    <td><?= $data['tgl_update'] ?></td>
                                                     <td class="d-flex justify-content-center">
-                                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit<?= $b['id_berita']; ?>">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit<?= $data['id_berita']; ?>">
                                                         <i class="bi bi-pencil-square"></i>
                                                         </button>
                                                         <!-- <a href="" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus">
                                                             <i class="bi bi-trash"></i>
                                                         </a> -->
-                                                        <button type="button" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus<?= $b['id_berita'];?>">
+                                                        <button type="button" class="btn btn-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModalHapus<?= $data['id_berita'];?>">
                                                             <i class="bi bi-trash"></i>
                                                         </button>
-                                                    </td>
+                                                </td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
@@ -72,7 +84,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url(); ?>admin/beranda/Berita/tambah/" method="post">
+                        <form action="<?= base_url(); ?>admin/beranda/Informasi/tambah/"  method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="judul" class="col-form-label">Judul :</label>
                             <input type="text" name="judul" class="form-control" id="judul">
@@ -89,14 +101,40 @@
                                 <input type="text" class="form-control is-invalid" id="judul" aria-describedby="inputGroupPrepend3" required>
                             </div>
                         </div> -->
+
                         <div class="mb-3">
-                            <input type="file" name="image" class="form-control" id="image">
-                            <span class="form-text text-danger d-block "><?= form_error('image'); ?></span>
+                            <label for="harga" class="col-form-label">Harga :</label>
+                            <input type="number" name="harga" class="form-control" id="harga">
+                            <!-- <small class="form-text text-danger"><?= form_error('judul'); ?></small> -->
+                        </div>
+                        <div class="form-group">
+                        <label for="jamBuka">Jam Buka:</label>
+                        <input type="time" class="form-control" id="jamBuka" name="jamBuka" required>
+                        </div>
+                        <div class="form-group">
+                        <label for="jamTutup">Jam Tutup:</label>
+                        <input type="time" class="form-control" id="jamTutup" name="jamTutup" required>
+                        </div>
+                        <div class="form-group">
+                        <label for="latitude">Latitude:</label>
+                        <input type="text" class="form-control" id="latitude" name="latitude">
+                        </div>
+                        <div class="form-group">
+                        <label for="longitude">Longitude:</label>
+                        <input type="text" class="form-control" id="longitude" name="longitude">
+                        </div>
+                        <div class="form-group">
+                        <label for="longitude">Alamat:</label>
+                        <input type="text" class="form-control" id="alamat" name="alamat">
                         </div>
                         <div class="mb-3">
+                        <input type="file" name="image" class="form-control" id="image">
+                        <span class="form-text text-danger d-block "><?= form_error('image'); ?></span>
+                        </div>
+                        <!-- <div class="mb-3">
                             <input type="date" name="tgl_update" class="form-control" id="tgl_update" required>
                             <span class="form-text text-danger d-block "><?= form_error('tgl_update'); ?></span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -110,6 +148,9 @@
 
             <!-- Modals edit data-->
             <?php foreach($data_berita as $data) : ?>
+
+
+            
             <div class="modal fade" id="exampleModalEdit<?= $data['id_berita']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
                     <div class="modal-content">
@@ -118,7 +159,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url(). 'admin/beranda/Berita/ubah/'. $data['id_berita'] ?>" method="post">
+                        <form action="<?= base_url(). 'admin/beranda/Informasi/ubah/'. $data['id_berita'] ?>" method="post">
                         <!-- <input type="hidden" name="id" value="<?= $data['id_berita']; ?>"> -->
                         <div class="mb-3">
                             <label for="judul" class="col-form-label">Judul :</label>
@@ -128,13 +169,38 @@
                             <label for="deskripsi" class="col-form-label">Deskripsi :</label>
                             <textarea class="form-control" name="deskripsi" id="deskripsi"><?= $data['deskripsi']; ?></textarea>
                         </div>
+                        <div class="mb-3">
+                            <label for="harga" class="col-form-label">Harga :</label>
+                            <input type="number" name="harga" class="form-control" id="harga">
+                            <!-- <small class="form-text text-danger"><?= form_error('judul'); ?></small> -->
+                        </div>
+                        <div class="form-group">
+                        <label for="jamBuka">Jam Buka:</label>
+                        <input type="time" class="form-control" id="jamBuka" value="<?= $data['jam_buka']; ?>" name="jamBuka">
+                    </div>
+                    <div class="form-group">
+                        <label for="jamTutup">Jam Tutup:</label>
+                        <input type="time" class="form-control" id="jamTutup" value="<?= $data['jam_tutup']; ?>" name="jamTutup">   
+                    </div>
+                    <div class="form-group">
+                        <label for="latitude">Latitude:</label>
+                        <input type="text" class="form-control" id="latitude" value="<?= $data['latitude']; ?>" name="latitude">
+                    </div>
+                    <div class="form-group">
+                        <label for="longitude">Longitude:</label>
+                        <input type="text" class="form-control" id="longitude" value ="<?= $data['longitude']; ?>" name="longitude">
+                    </div>
+                    <div class="form-group">
+                        <label for="longitude">Alamat:</label>
+                        <input type="text" class="form-control" id="alamat" value="<?= $data['alamat']; ?>" name="alamat">
+                    </div>
                         <div class="input-group mb-3">
                             <input type="file" name="image" class="form-control" id="image" value="<?= $data['image']; ?>">
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <input type="date" name="tgl_update" class="form-control" id="tgl_update" value="<?= $data['tgl_update']; ?>" required>
                             <span class="form-text text-danger d-block "><?= form_error('tgl_update'); ?></span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -158,11 +224,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Apakah yakin ingin mengahpus data ini?
+                    Apakah yakin ingin menghapus data ini?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="<?= base_url(); ?>admin/beranda/Berita/hapus/<?= $data['id_berita'];?>" class="btn btn-danger">Ya</a> 
+                    <a href="<?= base_url(); ?>admin/beranda/Informasi/hapus/<?= $data['id_berita'];?>" class="btn btn-danger">Ya</a> 
                 </div>
                 </div>
             </div>

@@ -46,7 +46,6 @@ class Home extends CI_Controller {
 		$judul = $this->input->post('judul', true);
 		$deskripsi = $this->input->post('deskripsi', true);
 		$image = $this->input->post('image', true);
- 
 		$data2 = array(
 			'judul' => $judul,
 			'deskripsi' => $deskripsi,

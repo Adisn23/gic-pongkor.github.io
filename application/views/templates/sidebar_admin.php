@@ -7,7 +7,7 @@
         <!-- <i class="fas fa-laugh-wink"></i> -->
     </div>
     <span>DASHBOARD</span>
-    <div class="mx-3">GIC-PONGKOR</div>
+    <div class="mx-3">GIC-Bogor Halimun Salak</div>
 </a>
 
 <!-- Divider -->
@@ -58,7 +58,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url() ?>admin/beranda/Banner">Manajemen Banner</a>
             <a class="collapse-item" href="<?php echo base_url() ?>admin/beranda/Home">Manajemen Beranda</a>
-            <a class="collapse-item" href="<?php echo base_url() ?>admin/beranda/Berita">Manajemen Informasi</a>
+            <a class="collapse-item" href="<?php echo base_url() ?>admin/beranda/Informasi">Manajemen Informasi</a>
             <a class="collapse-item" href="<?php echo base_url() ?>admin/beranda/visi_misi">Manajemen Visi & Misi</a>
         </div>
     </div>

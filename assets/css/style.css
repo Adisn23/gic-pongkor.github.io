@@ -134,6 +134,7 @@ h6 {
 
 #header .logo a {
   color: #5cb874;
+  text-decoration: none
 }
 
 #header .logo img {
@@ -206,7 +207,7 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   background: #5cb874;
-  color: #fff;
+  color: #ff9837;
 }
 
 .navbar .dropdown ul {
@@ -325,7 +326,7 @@ h6 {
   left: 15px;
   padding: 10px 0;
   background-color: #fff;
-  overflow-y: auto;
+  overflow-y: hidden;
   transition: 0.3s;
 }
 
@@ -386,7 +387,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 70vh;
+  height: 65vh;
   background-color: rgba(9, 9, 9, 0.8);
   overflow: hidden;
   position: relative;
@@ -441,7 +442,6 @@ h6 {
 
 #hero .carousel-inner .carousel-item {
   transition-property: opacity;
-  background-position: center top;
 }
 
 #hero .carousel-inner .carousel-item,
@@ -599,6 +599,48 @@ section {
   margin-bottom: 0;
   font-size: 14px;
   color: #919191;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: -40px;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+.popular {
+  font-size: 16px;
+  color: #666;
+}
+
+.popular a {
+  color: #03a025;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.popular a:hover {
+  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -1457,3 +1499,89 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 2rem;
+  color: #ddd;
+  padding: 0 0.1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating input:checked ~ label {
+  color: #f5b301;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f5b301;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#reviewResult {
+  margin-top: 20px;
+  font-size: 1rem;
+} */

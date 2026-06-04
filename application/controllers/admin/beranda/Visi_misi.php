@@ -22,9 +22,11 @@ class Visi_misi extends CI_Controller {
 	}
 
 	public function tambah(){
+
+		
 		$visi = $this->input->post('visi', true);
 		$misi = $this->input->post('misi', true);
- 
+
 		$data2 = array(
 			'visi' => $visi,
 			'misi' => $misi
@@ -65,12 +67,11 @@ class Visi_misi extends CI_Controller {
 		
 		$visi = $this->input->post('visi', true);
 		$misi = $this->input->post('misi', true);
- 
+
 		$data2 = array(
 			'visi' => $visi,
 			'misi' => $misi,
 			);
-
 		// $data['data_home'] = $this->Manajemen_home_model->getAllData();
 
 		$this->Visi_misi_model->ubahData($id,$data2);
@@ -90,6 +91,4 @@ class Visi_misi extends CI_Controller {
 			
 		}
 	}
-
-
 }

@@ -12,7 +12,7 @@
             <i class="fa fa-bars"></i>
         </button>
 
-        <h4 class="fw-bold">GEOPARK PONGKOR INFORMATION CENTER</h4>
+        <h4 class="fw-bold">GEOPARK BOGOR HALIMUN SALAK INFORMATION CENTER</h4>
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
@@ -44,14 +44,12 @@
                         Activity Log
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                    <a class="dropdown-item" href="<?=base_url().'Auth/Logout'?>">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>
-                </div>
+                    </div>
             </li>
-
         </ul>
-
     </nav>
     <!-- End of Topbar -->

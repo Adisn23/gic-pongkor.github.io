@@ -5,12 +5,12 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/gic_image/gic_2.jpg)">
+        <div class="carousel-item active" style="background-image: url(assets/img/logo/logobaru.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Geopark Pongkor
+              <h2 class="animate__animated animate__fadeInDown">Geopark Bogor Halimun Salak
               <span class="d-block">Profil</span></h2>
-              <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Pongkor. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Pongkor</p>
+              <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Bogor Halimun Salak. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Bogor Halimun Salak</p>
             </div>
           </div>
         </div>
@@ -22,8 +22,8 @@
     <section id="profil" class="profil">
       <div class="container">
         <div class="section-title">
-          <h2>Geopark Pongkor</h2>
-          <p>Geopark Pongkor adalah sebuah geopark yang terletak di Kabupaten Bogor, Jawa Barat, Indonesia. Geopark ini memiliki keunikan geologi, keanekaragaman hayati, serta nilai budaya dan sejarah yang signifikan. Geopark Pongkor secara khusus menampilkan ciri khas geologi dan lanskap alam yang memukau, termasuk adanya endapan-endapan mineral, situs-situs batuan, serta keindahan alam yang menarik.</p>
+          <h2>Geopark Bogor Halimun Salak</h2>
+          <p>Geopark Bogor Halimun Salak adalah sebuah geopark yang terletak di Kabupaten Bogor, Jawa Barat, Indonesia. Geopark ini memiliki keunikan geologi, keanekaragaman hayati, serta nilai budaya dan sejarah yang signifikan. Geopark Bogor Halimun Salak secara khusus menampilkan ciri khas geologi dan lanskap alam yang memukau, termasuk adanya endapan-endapan mineral, situs-situs batuan, serta keindahan alam yang menarik.</p>
         </div>
 
         <div class="row">
@@ -33,9 +33,9 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content content-about-gic">
             <h3 class="fw-bold">PENGEMBANGAN GEOPARK</h3>
             <span class="d-block mb-2">
-            Kawasan Geopark Pongkor terdiri dari lembah dan pengunungan yang sangat layak menjadi objek wisata karena sudah terdapat beberapa kawasan wisata alam. Geopark Pongkor diresmikan pada tahun 2018 melalui Surat Keputusan Bupati Nomor: 556/177/Kpts/Per-UU/2018, meliputi 15 kecamatan yaitu: Nanggung, Sukajaya, Jasinga, Cigudeg, Tenjo, Tenjolaya, Tamansari, Pamijahan, Leuwiliang, Ciampea, Cibungbulang, Leuwisadeng, Parung, Rumpin dan Ciseeng, dengan 172 desa serta 33 geosite yang bisa dikembangkan.
+            Kawasan Geopark Bogor Halimun Salak terdiri dari lembah dan pengunungan yang sangat layak menjadi objek wisata karena sudah terdapat beberapa kawasan wisata alam. Geopark Pongkor diresmikan pada tahun 2018 melalui Surat Keputusan Bupati Nomor: 556/177/Kpts/Per-UU/2018, meliputi 15 kecamatan yaitu: Nanggung, Sukajaya, Jasinga, Cigudeg, Tenjo, Tenjolaya, Tamansari, Pamijahan, Leuwiliang, Ciampea, Cibungbulang, Leuwisadeng, Parung, Rumpin dan Ciseeng, dengan 172 desa serta 33 geosite yang bisa dikembangkan.
             </span>
-            <span>Berdasarkan keadaan Geologinya, Geopark Pongkor dibagi menjadi 4 Geo Area, yaitu:
+            <span>Berdasarkan keadaan Geologinya, Geopark Bogor Halimun Salak dibagi menjadi 4 Geo Area, yaitu:
                 <ol>
                     <li>Geo Area 1 terdiri dari Kecamatan Nanggung, Sukajaya, Jasinga, dan Cigudeg.</li>
                     <li>Geo Area 2 terdiri dari Kecamatan Leuwiliang, Ciampea, Cibungbulang, dan Leuwisadeng</li>
@@ -45,7 +45,7 @@
             </span>
             <h3 class="fw-bold">KARAKTERISTIK GEOLOGI</h3>
             <span class="d-block mb-2">
-            Berdasarkan proses kejadian pembentukannya, Geopark Nasional Pongkor terbentuk pada tiga lingkungan sedimentasi yang berbeda (Martodjojo, 1987).  Mandala Cekungan Bogor (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi A.  Cimapag, berumur Miosen Awal – Tengah).  Mandala Paparan Kontinen (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi Cibulakan, berumur Miosen Tengah).  Mandala Cekungan Banten/Cekungan Rangkasbitung (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi Bojongmanik, berumur Miosen Tengah).  Posisi Geopark Nasional Pongkor terhadap cekungan sedimentasi masalalu, menghasilkan hubungan sedimentasi yang cukup rumit.
+            Berdasarkan proses kejadian pembentukannya, Geopark Bogor Halimun Salak terbentuk pada tiga lingkungan sedimentasi yang berbeda (Martodjojo, 1987).  Mandala Cekungan Bogor (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi A.  Cimapag, berumur Miosen Awal – Tengah).  Mandala Paparan Kontinen (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi Cibulakan, berumur Miosen Tengah).  Mandala Cekungan Banten/Cekungan Rangkasbitung (dengan formasi batuan sedimen tertua yang tersingkap disini adalah Formasi Bojongmanik, berumur Miosen Tengah).  Posisi Geopark Bogor Halimun Salak terhadap cekungan sedimentasi masalalu, menghasilkan hubungan sedimentasi yang cukup rumit.
             </span>
           </div>
         </div>

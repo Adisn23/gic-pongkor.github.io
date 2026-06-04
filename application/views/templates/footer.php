@@ -2,21 +2,21 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Geopark Pongkor <span class="d-block">Information Center</span></h3>
-      <p>Website Informasi Geopark Pongkor.</p>
+      <h3>Geopark Bogor Halimun Salak <span class="d-block">Information Center</span></h3>
+      <p>Website Informasi Geopark Bogor Halimun Salak.</p>
       <div class="social-links">
         <a href="https://www.facebook.com/geopark.pongkor.94/" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/bappedalitbangkabbogor/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.instagram.com/geopark_pongkor/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
       <div class="copyright">
-        &copy; <strong>All Rights Reserved 2024</strong>
+        &copy; <strong>All Rights Reserved</strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-      <a href="https://bootstrapmade.com/">Geopark Pongkor Information Center</a>
+      <a>Geopark Bogor Halimun Salak Information Center</a>
       </div>
     </div>
   </footer><!-- End Footer -->

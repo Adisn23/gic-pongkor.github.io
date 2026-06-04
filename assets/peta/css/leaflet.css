@@ -21,9 +21,9 @@
 .leaflet-marker-icon,
 .leaflet-marker-shadow {
 	-webkit-user-select: none;
-	   -moz-user-select: none;
-	        user-select: none;
-	  -webkit-user-drag: none;
+	-moz-user-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
 	}
 /* Prevents IE11 from highlighting tiles in blue */
 .leaflet-tile::selection {
@@ -86,7 +86,7 @@
 	width: 0;
 	height: 0;
 	-moz-box-sizing: border-box;
-	     box-sizing: border-box;
+	box-sizing: border-box;
 	z-index: 800;
 	}
 /* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */
@@ -532,7 +532,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 
 .leaflet-oldie .leaflet-popup-content-wrapper {
-	zoom: 1;
+	-ms-zoom: 1;
 	}
 .leaflet-oldie .leaflet-popup-tip {
 	width: 24px;

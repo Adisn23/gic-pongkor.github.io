@@ -59,24 +59,27 @@
     })
   }
   window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+  onscroll(window, navbarlinksActive) // Mengganti document dengan window
 
   /**
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
     let header = select('#header')
-    let offset = header.offsetHeight
+    let offset = header ? header.offsetHeight : 0
 
-    if (!header.classList.contains('header-scrolled')) {
+    if (header && !header.classList.contains('header-scrolled')) {
       offset -= 16
     }
 
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
+    const targetElement = select(el)
+    if (targetElement) {
+      let elementPos = targetElement.offsetTop
+      window.scrollTo({
+        top: elementPos - offset,
+        behavior: 'smooth'
+      })
+    }
   }
 
   /**
@@ -96,7 +99,7 @@
       }
     }
     window.addEventListener('load', headerFixed)
-    onscroll(document, headerFixed)
+    onscroll(window, headerFixed) // Mengganti document dengan window
   }
 
   /**
@@ -112,7 +115,7 @@
       }
     }
     window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+    onscroll(window, toggleBacktotop) // Mengganti document dengan window
   }
 
   /**
@@ -135,7 +138,7 @@
   }, true)
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
@@ -153,7 +156,7 @@
   }, true)
 
   /**
-   * Scroll with ofset on page load with hash links in the url
+   * Scroll with offset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -161,7 +164,7 @@
         scrollto(window.location.hash)
       }
     }
-  });
+  })
 
   /**
    * Hero carousel indicators
@@ -173,7 +176,7 @@
     (index === 0) ?
     heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
       heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
-  });
+  })
 
   /**
    * Clients Slider
@@ -209,42 +212,40 @@
         spaceBetween: 120
       }
     }
-  });
+  })
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
+    let portfolioContainer = select('.portfolio-container')
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
-      });
+      })
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+      let portfolioFilters = select('#portfolio-flters li', true)
 
       on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
+        e.preventDefault()
         portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
+          el.classList.remove('filter-active')
+        })
+        this.classList.add('filter-active')
 
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
-        });
-
-      }, true);
+        })
+      }, true)
     }
-
-  });
+  })
 
   /**
    * Initiate portfolio lightbox 
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
-  });
+  })
 
   /**
    * Portfolio details slider
@@ -261,50 +262,53 @@
       type: 'bullets',
       clickable: true
     }
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const stars = document.querySelectorAll('.star-rating i');
-
-    stars.forEach(star => {
-        star.addEventListener('mouseover', () => {
-            const value = parseInt(star.getAttribute('data-value'));
-            highlightStars(value);
-        });
-
-        star.addEventListener('mouseout', () => {
-            const selectedValue = parseInt(document.querySelector('.star-rating i.selected')?.getAttribute('data-value') || 0);
-            highlightStars(selectedValue);
-        });
-
-        star.addEventListener('click', () => {
-            const value = parseInt(star.getAttribute('data-value'));
-            setRating(value);
-        });
+  })
+  document.addEventListener('DOMContentLoaded', function () {
+    /**
+     * Star rating functionality
+     */
+    document.querySelectorAll('input[name="rating"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const rating = document.querySelector('input[name="rating"]:checked').value;
+        alert(`You have rated ${rating} stars.`);
+      });
     });
-
-    function highlightStars(value) {
-        stars.forEach(star => {
-            const starValue = parseInt(star.getAttribute('data-value'));
-            if (starValue <= value) {
-                star.classList.add('hover');
-            } else {
-                star.classList.remove('hover');
-            }
-        });
+  
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewTextInput = document.getElementById('review');
+    const reviewResult = document.getElementById('reviewResult');
+  
+    if (reviewForm && reviewTextInput && reviewResult) {
+      reviewForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+  
+        const rating = document.querySelector('input[name="rating"]:checked');
+        const reviewText = reviewTextInput.value;
+  
+        if (!rating) {
+          alert('Silakan pilih rating.');
+          return;
+        }
+  
+        reviewResult.innerHTML = `
+          <h3>Ulasan Anda</h3>
+          <p><strong>Rating:</strong> ${rating.value} bintang</p>
+          <p><strong>Ulasan:</strong> ${reviewText}</p>
+        `;
+  
+        reviewForm.reset();
+      });
+    } else {
+      console.warn('Elemen form ulasan tidak ditemukan di halaman.');
     }
-
-    function setRating(value) {
-        stars.forEach(star => {
-            const starValue = parseInt(star.getAttribute('data-value'));
-            if (starValue <= value) {
-                star.classList.add('selected');
-            } else {
-                star.classList.remove('selected');
-            }
-        });
-    }
+  
+    // Time input handler
+    const timeInputs = document.querySelectorAll('input[type="time"]');
+    timeInputs.forEach(input => {
+      input.addEventListener('change', function () {
+        let time = this.value;
+        console.log(`Time selected: ${time}`);
+      });
+    });
+  });
 });
-
-
-})()

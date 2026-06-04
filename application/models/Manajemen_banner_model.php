@@ -2,7 +2,7 @@
 
 class Manajemen_banner_model extends CI_model {
     public function getAllData(){
-       return $this->db->get('tbl_manajemen_banner')->result_array();
+    return $this->db->get('tbl_manajemen_banner')->result_array();
     }
 
     // public function tambahData(){

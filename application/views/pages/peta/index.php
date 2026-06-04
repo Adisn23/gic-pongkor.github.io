@@ -1,418 +1,131 @@
 <body>
 <!-- Favicons -->
-  <!-- <link href="<?php echo base_url() ?>assets/img/logo/logokabbogor.png" rel="icon">
-  <head>
-  
+<!-- <link href="<?php echo base_url() ?>assets/img/logo/logokabbogor.png" rel="icon"> -->
 
-  <meta charset="utf-8">
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <!-- <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel"> -->
+    <div class="carousel-inner" role="listbox">
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(uploads/image/kampungsinbad.jpg)">
+        <div class="carousel-container">
+            <div class="container">
+            <h2 class="animate__animated animate__fadeInDown">Geopark Bogor Halimun Salak
+            <span class="d-block">Peta</span></h2>
+            <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Bogor Halimun Salak. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Bogor Halimun Salak</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- End Hero -->
+<div class="container-fluid" style="padding: 0;">
+<div id="map" style="height:800px; width:100% !important;"></div>
+<script src="<?php echo base_url() ?>assets/peta/js/qgis2web_expressions.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/leaflet.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/L.Control.Layers.Tree.min.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/L.Control.Locate.min.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/leaflet.rotatedMarker.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/leaflet.pattern.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/leaflet-hash.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/Autolinker.min.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/rbush.min.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/labelgun.min.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/labels.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/data/Kecamatan_1.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/data/KecukupanInformasiObjekWisata_2.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/styles/Kecamatan_1_style.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/styles/KecukupanInformasiObjekWisata_2_style.js"></script>
+<script src="<?php echo base_url() ?>assets/peta/js/layers.js"></script>
+
+<head>
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="<?= base_url() ?>assets/peta/css/leaflet.css">
-        <link rel="stylesheet" href="<?= base_url() ?>assets/peta/css/L.Control.Locate.min.css">
-        <link rel="stylesheet" href="<?= base_url() ?>assets/peta/css/qgis2web.css">
-        <link rel="stylesheet" href="<?= base_url() ?>assets/peta/css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="<?= base_url() ?>assets/peta/css/leaflet-control-geocoder.Geocoder.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/ol.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet-locatecontrol.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet-layers-tree.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet-control-geocoder.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet.rotatedMarker.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet.pattern.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet-hash.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/leaflet.labelgun.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/fontawesome-all.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/ol3-popup.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/ol3-layerswitcher.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/ol3-search.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/qgis2web.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/qgis2web_expressions.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/horsey.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/ol3-search.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/peta/resources/ol3-search-layer.min.css">
+        <link href="<?php echo base_url() ?>assets/peta/resources/ol-geocoder.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/qgis2web.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/ol-popup.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/peta/resources/ol-geocoder.css">
         <style>
-        #map {
-            width: 1650px;
-            height: 750px;
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control > * {
+            background-color: #f8f8f8!important;
+            color: #444444!important;
+            border-radius: 0px;
+        }
+        .ol-control > *:focus, .ol-control > *:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        }
+        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+            color: #444444!important;
+        }
+        .search-layer-input-search {
+            background-color: #f8f8f8!important;
+        }
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        } 
+        .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 2px !important;
+        }
+        .ol-popup {
+            background-color: rgba(255,255,255,.9) !important;
+            padding: 10px !important;
+            border-radius: 5px !important;
+            box-shadow: 0 1px 4px rgba(0,0,0,.2) !important;
         }
         </style>
-    <title></title> -->
-
-<!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <!-- <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel"> -->
-
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/gic_image/gic_2.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Geopark Pongkor
-              <span class="d-block">Peta</span></h2>
-              <p class="animate__animated animate__fadeInUp">Selamat datang di website Geopark Pongkor. <br>Sistem ini hanya menampilkan informasi pariwisata Geopark Pongkor</p>
+        <!-- <style>
+        #map {
+            width: 1675px;
+            height: 846px;
+        }
+        </style> -->
+        <title></title>
+    </head>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Hero -->
-
-
-<div class="container-fluid pt-2 pb-2">
-<div id="map" style="height:500px; width:100% !important;">
-  </div>
-  <script src="<?php base_url() ?>assets/peta/js/qgis2web_expressions.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/leaflet.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/L.Control.Locate.min.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/leaflet.rotatedMarker.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/leaflet.pattern.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/leaflet-hash.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/Autolinker.min.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/rbush.min.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/labelgun.min.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/labels.js"></script>
-  <script src="<?php base_url() ?>assets/peta/js/leaflet-control-geocoder.Geocoder.js"></script>
-  <script src="<?php base_url() ?>assets/peta/data/Kecamatan_1.js"></script>
-  <script src="<?php base_url() ?>assets/peta/data/Titik_Lokasi_Wisata_2.js"></script>
-  <script>
-  var highlightLayer;
-  function highlightFeature(e) {
-      highlightLayer = e.target;
-
-      if (e.target.feature.geometry.type === 'LineString') {
-        highlightLayer.setStyle({
-          color: '#ffff00',
-        });
-      } else {
-        highlightLayer.setStyle({
-          fillColor: '#ffff00',
-          fillOpacity: 1
-        });
-      }
-  }
-  var map = L.map('map', {
-      zoomControl:true, maxZoom:28, minZoom:1
-  })
-  var hash = new L.Hash(map);
-  map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
-  var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
-  L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
-  var bounds_group = new L.featureGroup([]);
-  function setBounds() {
-      if (bounds_group.getLayers().length) {
-          map.fitBounds(bounds_group.getBounds());
-      }
-  }
-  map.createPane('pane_GoogleMaps_0');
-  map.getPane('pane_GoogleMaps_0').style.zIndex = 400;
-  var layer_GoogleMaps_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-      pane: 'pane_GoogleMaps_0',
-      opacity: 1.0,
-      attribution: '',
-      minZoom: 1,
-      maxZoom: 28,
-      minNativeZoom: 0,
-      maxNativeZoom: 19
-  });
-  layer_GoogleMaps_0;
-  map.addLayer(layer_GoogleMaps_0);
-  function pop_Kecamatan_1(feature, layer) {
-      layer.on({
-          mouseout: function(e) {
-              for (i in e.target._eventParents) {
-                  e.target._eventParents[i].resetStyle(e.target);
-              }
-          },
-          mouseover: highlightFeature,
-      });
-      var popupContent =
-      '<div class="text-center">\
-      <h5 class="text-center fw-bold">KECAMATAN '+ (feature.properties['KECAMATAN'] !== null ? autolinker.link(feature.properties['KECAMATAN'].toLocaleString()) : '') + '<h5>\
-      <div>\
-      ' + (feature.properties['Foto'] !== null ? '<img style="height:200px !important; width:18rem !important;" src="<?php base_url()?>assets/peta/images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '\
-      </div>\
-      <p class="text-center">Luas Kecamatan : ' + (feature.properties['luaskec'] !== null ? autolinker.link(feature.properties['luaskec'].toLocaleString()) : '') + '<p>\
-      </div>\
-      ';
-      //  '<table>\
-      //         <tr>\
-      //             <th scope="row">KECAMATAN: </th>\
-      //             <td>' + (feature.properties['KECAMATAN'] !== null ? autolinker.link(feature.properties['KECAMATAN'].toLocaleString()) : '') + '</td>\
-      //         </tr>\
-      //         <tr>\
-      //             <th scope="row">luaskec:</th>\
-      //             <td>' + (feature.properties['luaskec'] !== null ? autolinker.link(feature.properties['luaskec'].toLocaleString()) : '') + '</td>\
-      //         </tr>\
-      //         <tr>\
-      //             <th scope="row">Foto :</th>\
-      //             <td>' + (feature.properties['Foto'] !== null ? '<img style="height:200px !important; width:200px !important;" src="<?php base_url()?>assets/peta/images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
-      //         </tr>\
-      //     </table>';
-      layer.bindPopup(popupContent, {maxHeight: 400});
-  }
-
-  function style_Kecamatan_1_0(feature) {
-      switch(String(feature.properties['KECAMATAN'])) {
-          case 'LEUWILIANG':
-              return {
-          pane: 'pane_Kecamatan_1',
-          opacity: 1,
-          color: 'rgba(35,35,35,0.2)',
-          dashArray: '',
-          lineCap: 'butt',
-          lineJoin: 'miter',
-          weight: 1.0, 
-          fill: true,
-          fillOpacity: 1,
-          fillColor: 'rgba(16,210,181,0.2)',
-          interactive: true,
-      }
-              break;
-          case 'NANGGUNG':
-              return {
-          pane: 'pane_Kecamatan_1',
-          opacity: 1,
-          color: 'rgba(35,35,35,0.2)',
-          dashArray: '',
-          lineCap: 'butt',
-          lineJoin: 'miter',
-          weight: 1.0, 
-          fill: true,
-          fillOpacity: 1,
-          fillColor: 'rgba(207,102,116,0.2)',
-          interactive: true,
-      }
-              break;
-          case 'PAMIJAHAN':
-              return {
-          pane: 'pane_Kecamatan_1',
-          opacity: 1,
-          color: 'rgba(35,35,35,0.2)',
-          dashArray: '',
-          lineCap: 'butt',
-          lineJoin: 'miter',
-          weight: 1.0, 
-          fill: true,
-          fillOpacity: 1,
-          fillColor: 'rgba(206,62,228,0.2)',
-          interactive: true,
-      }
-              break;
-          case 'TAMANSARI':
-              return {
-          pane: 'pane_Kecamatan_1',
-          opacity: 1,
-          color: 'rgba(35,35,35,0.2)',
-          dashArray: '',
-          lineCap: 'butt',
-          lineJoin: 'miter',
-          weight: 1.0, 
-          fill: true,
-          fillOpacity: 1,
-          fillColor: 'rgba(194,167,14,0.2)',
-          interactive: true,
-      }
-              break;
-          case 'TENJOLAYA':
-              return {
-          pane: 'pane_Kecamatan_1',
-          opacity: 1,
-          color: 'rgba(35,35,35,0.2)',
-          dashArray: '',
-          lineCap: 'butt',
-          lineJoin: 'miter',
-          weight: 1.0, 
-          fill: true,
-          fillOpacity: 1,
-          fillColor: 'rgba(65,204,41,0.2)',
-          interactive: true,
-      }
-              break;
-      }
-  }
-  map.createPane('pane_Kecamatan_1');
-  map.getPane('pane_Kecamatan_1').style.zIndex = 401;
-  map.getPane('pane_Kecamatan_1').style['mix-blend-mode'] = 'normal';
-  var layer_Kecamatan_1 = new L.geoJson(json_Kecamatan_1, {
-      attribution: '',
-      interactive: true,
-      dataVar: 'json_Kecamatan_1',
-      layerName: 'layer_Kecamatan_1',
-      pane: 'pane_Kecamatan_1',
-      onEachFeature: pop_Kecamatan_1,
-      style: style_Kecamatan_1_0,
-  });
-  bounds_group.addLayer(layer_Kecamatan_1);
-  map.addLayer(layer_Kecamatan_1);
-  function pop_Titik_Lokasi_Wisata_2(feature, layer) {
-      layer.on({
-          mouseout: function(e) {
-              for (i in e.target._eventParents) {
-                  e.target._eventParents[i].resetStyle(e.target);
-              }
-          },
-          mouseover: highlightFeature,
-      });
-
-      var popupContent = 
-      '<div class="">\
-      <h5 class="text-center fw-bold mt-3">KECAMATAN ' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '<h5>\
-      <div class="mb-2">\
-      ' + (feature.properties['Foto'] !== null ? '<img style="height:200px !important; width:18rem !important;" src="<?php base_url()?>assets/peta/images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '" >' : '') + '\
-      </div>\
-      <div style="font-size:16px;" class="text-center mb-2">\
-        <small class="fw-bold">Koordinat :</small>\
-        <span class="text-center">' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '<span>\
-        <span class="text-center">' + (feature.properties['Y'] !== null ? autolinker.link(feature.properties['Y'].toLocaleString()) : '') + '<span>\
-      </div>\
-      <small style="font-size:12px; text-align:justify; class="text-center d-block mb-3">' + (feature.properties['Deskripsi'] !== null ? autolinker.link(feature.properties['Deskripsi'].toLocaleString()) : '') + '<small>\
-      </div>\
-      ';
-
-      '<table>\
-              <tr>\
-                  <th scope="row">Name</th>\
-                  <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
-              </tr>\
-              <tr>\
-                  <td colspan="2">' + (feature.properties['FolderPath'] !== null ? autolinker.link(feature.properties['FolderPath'].toLocaleString()) : '') + '</td>\
-              </tr>\
-              <tr>\
-                  <td colspan="2">' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '</td>\
-              </tr>\
-              <tr>\
-                  <td colspan="2">' + (feature.properties['Y'] !== null ? autolinker.link(feature.properties['Y'].toLocaleString()) : '') + '</td>\
-              </tr>\
-              <tr>\
-                  <th scope="row">Foto</th>\
-                  <td>  ' + (feature.properties['Foto'] !== null ? '<img style="height:50px !important; width:50px !important;" src="<?php base_url()?>assets/peta/images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '" >' : '') + '</td>\
-              </tr>\
-              <tr>\
-                  <th scope="row">Deskripsi</th>\
-                  <td>' + (feature.properties['Deskripsi'] !== null ? autolinker.link(feature.properties['Deskripsi'].toLocaleString()) : '') + '</td>\
-              </tr>\
-          </table>';
-      layer.bindPopup(popupContent, {maxHeight: 400});
-  }
-
-  function style_Titik_Lokasi_Wisata_2_0() {
-      return {
-      pane: 'pane_Titik_Lokasi_Wisata_2',
-      rotationAngle: 0.0,
-      rotationOrigin: 'center center',
-      icon: L.icon({
-      iconUrl: '<?php base_url()?>assets/peta/markers/blue-marker.svg',
-      iconSize: [19.0, 19.0]
-  }),
-          interactive: true,
-      }
-  }
-  map.createPane('pane_Titik_Lokasi_Wisata_2');
-  map.getPane('pane_Titik_Lokasi_Wisata_2').style.zIndex = 402;
-  map.getPane('pane_Titik_Lokasi_Wisata_2').style['mix-blend-mode'] = 'normal';
-  var layer_Titik_Lokasi_Wisata_2 = new L.geoJson(json_Titik_Lokasi_Wisata_2, {
-      attribution: '',
-      interactive: true,
-      dataVar: 'json_Titik_Lokasi_Wisata_2',
-      layerName: 'layer_Titik_Lokasi_Wisata_2',
-      pane: 'pane_Titik_Lokasi_Wisata_2',
-      onEachFeature: pop_Titik_Lokasi_Wisata_2,
-      pointToLayer: function (feature, latlng) {
-          var context = {
-              feature: feature,
-              variables: {}
-          };
-          return L.marker(latlng, style_Titik_Lokasi_Wisata_2_0(feature));
-      },
-  });
-  bounds_group.addLayer(layer_Titik_Lokasi_Wisata_2);
-  map.addLayer(layer_Titik_Lokasi_Wisata_2);
-  var osmGeocoder = new L.Control.Geocoder({
-      collapsed: true,
-      position: 'topleft',
-      text: 'Search',
-      title: 'Testing'
-  }).addTo(map);
-  document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-  .className += ' fa fa-search';
-  document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-  .title += 'Search for a place';
-  var baseMaps = {};
-  L.control.layers(baseMaps,{'<img src="<?php base_url()?>assets/peta/legend/Titik_Lokasi_Wisata_2.png" /> Titik_Lokasi_Wisata': layer_Titik_Lokasi_Wisata_2,'Kecamatan<br /><table><tr><td style="text-align: center;"><img src="<?php base_url()?>assets/peta/legend/Kecamatan_1_LEUWILIANG0.png" /></td><td>LEUWILIANG</td></tr><tr><td style="text-align: center;"><img src="<?php base_url()?>assets/peta/legend/Kecamatan_1_NANGGUNG1.png" /></td><td>NANGGUNG</td></tr><tr><td style="text-align: center;"><img src="<?php base_url()?>assets/peta/legend/Kecamatan_1_PAMIJAHAN2.png" /></td><td>PAMIJAHAN</td></tr><tr><td style="text-align: center;"><img src="<?php base_url()?>assets/peta/legend/Kecamatan_1_TAMANSARI3.png" /></td><td>TAMANSARI</td></tr><tr><td style="text-align: center;"><img src="<?php base_url()?>assets/peta/legend/Kecamatan_1_TENJOLAYA4.png" /></td><td>TENJOLAYA</td></tr></table>': layer_Kecamatan_1,"Google Maps": layer_GoogleMaps_0,}).addTo(map);
-  setBounds();
-  var i = 0;
-  layer_Kecamatan_1.eachLayer(function(layer) {
-      var context = {
-          feature: layer.feature,
-          variables: {}
-      };
-      layer.bindTooltip((layer.feature.properties['KECAMATAN'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['KECAMATAN']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Kecamatan_1'});
-      labels.push(layer);
-      totalMarkers += 1;
-        layer.added = true;
-        addLabel(layer, i);
-        i++;
-  });
-  var i = 0;
-  layer_Titik_Lokasi_Wisata_2.eachLayer(function(layer) {
-      var context = {
-          feature: layer.feature,
-          variables: {}
-      };
-      layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Titik_Lokasi_Wisata_2'});
-      labels.push(layer);
-      totalMarkers += 1;
-        layer.added = true;
-        addLabel(layer, i);
-        i++;
-  });
-  resetLabels([layer_Kecamatan_1,layer_Titik_Lokasi_Wisata_2]);
-  map.on("zoomend", function(){
-      resetLabels([layer_Kecamatan_1,layer_Titik_Lokasi_Wisata_2]);
-  });
-  map.on("layeradd", function(){
-      resetLabels([layer_Kecamatan_1,layer_Titik_Lokasi_Wisata_2]);
-  });
-  map.on("layerremove", function(){
-      resetLabels([layer_Kecamatan_1,layer_Titik_Lokasi_Wisata_2]);
-  });
-  </script>
-</div>
-
-<!-- QGis Section -->
-    <!-- <div class="container pt-2 pb-2">
-        <div id="map" style="height:500px; width:100% !important;">
-            
-        </div>
-
-        <script src="<?php echo base_url() ?>assets/js/Layer_Kecamatan.js"></script>
-        <script src="<?php echo base_url() ?>assets/js/Layer_Wisata.js"></script>
-        <script>
-            var map = L.map('map').setView([-6.6498, 106.6221], 10.63);
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            });
-
-            googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }).addTo(map);
-
-            var kecamatan = L.geoJSON(Layer_Kecamatan, {
-                
-            }).addTo(map)
-
-            var wisata = L.geoJSON(Layer_Wisata, {
-                
-            }).addTo(map)
-
-            var geojsonLayer = new L.GeoJSON.AJAX('assets/js/Layer_Wisata.geojson', {pointToLayer:
-              function(feature, latlng) {
-                console.log(feature)
-              var str = "<h4>"+feature.properties.Name+"</h4><hr>";
-              str += "<p>"+feature.properties.FolderPath+"</p>";
-              str += "<p>"+feature.properties.Deskripsi+"</p>";
-            //   str += "<a href=' " + feature.properties.web+ " ' target = 'blank'";
-            //   str += "<img src='img/"+feature.properties.image+" ' width='200px'";
-            //   str += "</a>";
-              return L.marker(latlng).bindPopup(str);
-            }});
-            geojsonLayer.addTo(map);
-
-            // wisata.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-
-            // var polsek_bogor = L.layerGroup();
-
-            // var wilayah = L.layerGroup();
-        </script>
-        
-    </div> -->
-      </body>
-<!-- QGis Section -->
+        <script src="<?php echo base_url() ?>assets/peta/resources/qgis2web_expressions.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/proj4.js"></script>
+        <script>proj4.defs('EPSG:32748','+proj=utm +zone=48 +south +datum=WGS84 +units=m +no_defs');</script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/functions.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/ol.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/horsey.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/ol3-search-layer.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/ol-layerswitcher.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/ol-geocoder.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/layers/Kecamatan_1.js"></script><script src="<?php echo base_url() ?>assets/peta/layers/KecukupanInformasiObjekWisata_2.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/styles/Kecamatan_1_style.js"></script><script src="<?php echo base_url() ?>assets/peta/styles/KecukupanInformasiObjekWisata_2_style.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/layers/layers.js" type="text/javascript"></script> 
+        <script src="<?php echo base_url() ?>assets/peta/resources/Autolinker.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/peta/resources/qgis2web.js"></script>
+    </body>

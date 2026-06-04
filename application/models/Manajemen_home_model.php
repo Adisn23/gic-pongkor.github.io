@@ -2,7 +2,7 @@
 
 class Manajemen_home_model extends CI_model {
     public function getAllData(){
-       return $this->db->get('tbl_manajemen_home')->result_array();
+    return $this->db->get('tbl_manajemen_home')->result_array();
     }
 
     // public function tambahData(){

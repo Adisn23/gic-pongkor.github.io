@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>GIC : Geopark Pongkor Information Center </title>
+  <title>GIC : Geopark Bogor Halimun Salak Information Center </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="<?php echo base_url() ?>assets/img/logo/logokabbogor.png" rel="icon">
-  <link href="<?php echo base_url() ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/apple-touch-icon.png" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -26,10 +26,13 @@
 
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
-  <link href="<?php base_url() ?>assets/css/gic.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets/css/gic.css" rel="stylesheet">
 
   <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/leaflet.css">
-  <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/leaflet.css">
+  <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/leaflet-search.css">
+  <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/MarkerCluster.css">
+  <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/L.Control.Layers.Tree.css">
   <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/L.Control.Locate.min.css">
   <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/qgis2web.css">
   <link rel="stylesheet" href="<?php base_url() ?>assets/peta/css/fontawesome-all.min.css">
@@ -49,18 +52,8 @@
   crossorigin=""></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js" integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- =======================================================
-  * Template Name: Green
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
-
   <!-- ======= Top Bar ======= -->
   <!-- <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -76,32 +69,28 @@
       </div>
     </div>
   </section> -->
-
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="<?= base_url();?>">GIC - Pongkor</a></h1>
+      <h1 class="logo me-auto"><a href="<?= base_url('Home');?>">GIC - Bogor Halimun Salak</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link " href="<?php echo base_url('Home') ?>">Beranda</a></li>
           <li><a class="nav-link " href="<?php echo base_url('Profil') ?>">Profil</a></li>
           <li><a class="nav-link " href="<?php echo base_url('Informasi') ?>">Informasi</a></li>
-          <li><a class="nav-link " href="<?php echo base_url('Galeri') ?>">Galeri</a></li>
+          <!-- <li><a class="nav-link " href="<?php echo base_url('Galeri') ?>">Galeri</a></li> -->
           <li><a class="nav-link " href="<?php echo base_url('Peta') ?>">Peta</a></li>
           <li><a class="nav-link " href="<?php echo base_url('Kontak') ?>">Kontak</a></li>
 
           <?php if ($this->session->userdata('email') == NULL){?>
           <li><a class="nav-link " href="<?php echo base_url('Auth/login') ?>">Masuk</a></li>
-          <?php }else{?><li><a href="<?= $this->session->userdata('role_id') == 1 ? base_url('dashboard') : '#'?>" class="nav-link "><?=$this->session->userdata('username');?></a></li><li><a href="<?=base_url().'Auth/Logout'?>" class="nav-link ">Logout</a></li><?php } ?>
+          <?php }else{?><li><a href="<?= $this->session->userdata('role_id') == 1 ? base_url('dashboard') : 'Auth/Logout'?>" class="nav-link "><?=$this->session->userdata('username');?></a></li><?php } ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
-
     </div>
   </header>
   <!-- End Header -->

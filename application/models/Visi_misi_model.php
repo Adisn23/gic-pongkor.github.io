@@ -2,7 +2,7 @@
 
 class Visi_misi_model extends CI_model {
     public function getAllData(){
-       return $this->db->get('tbl_visi_misi')->result_array();
+    return $this->db->get('tbl_visi_misi')->result_array();
     }
 
     // public function tambahData(){
